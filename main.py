@@ -10,20 +10,25 @@ from vector import Vector
 drive = 1/3
 pan = 1/56
 tilt = 1/56
-driveMotor = Motor(Port.D)
-panMotor = Motor(Port.B)
-tiltMotor = Motor(Port.C)
+driveMotor = Motor(Port.B)
+#panMotor = Motor(Port.B)
+#tiltMotor = Motor(Port.C)
 
 positionA = Vector(0, 0, 0)
 positionB = Vector(12.4, 1.4, 3.3)
 
 steps = 1000
 
-for i in range(100, steps+1):
-    t = i * 10
-    driveMotor.run_until_stalled(100, then=Stop.COAST, duty_limit=None)
+a = 10
+b = 1000
 
+def lerp(t, a, b):
+    return a + (b - a) * t
 
-#for i in range(0, steps+1):
-#    t = (i / steps)
-#    position = positionA.lerp(t, positionB)
+def run():
+    for i in range(0, steps):
+        t = (i / float(steps))
+        speed = lerp(t, a, b)
+        driveMotor.run_until_stalled(speed, then=Stop.COAST, duty_limit=None)
+
+run()
