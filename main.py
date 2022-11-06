@@ -24,19 +24,17 @@ steps = 1000
 a = 10
 b = 1000
 
-flip = True
-
 def lerp(t, a, b):
     return a + (b - a) * t
 
 def run():
-    global flip
+    flip = True
     for i in range(0, 10_000_000):
-        if i % 10_000 is 0:
+        if i % 100 == 0:
             flip = not flip
 
+        print(flip)
         if flip:
             driveMotor.run(1000)
-            print("yes")
 
 run()
