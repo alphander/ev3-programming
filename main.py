@@ -27,10 +27,13 @@ b = 1000
 def lerp(t, a, b):
     return a + (b - a) * t
 
+def fun(x):
+    return min((((0-x)*(30-x)*(50-x)*(70-x))-0.001) + 130, 1000)
+
 def run():
     flip = True
     for i in range(0, 10_000_000):
-        t = min((i / 1_000), 1_000)
+        t = fun(i)
         driveMotor.run(t)
 
 run()
