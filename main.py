@@ -28,9 +28,7 @@ def lerp(t, a, b):
     return a + (b - a) * t
 
 def run():
-    for i in range(0, steps):
-        t = (i / float(steps))
-        speed = lerp(t, a, b)
-        driveMotor.run(speed)
+    while True:
+        driveMotor.run(1000)
 
 run()
