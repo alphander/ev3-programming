@@ -30,14 +30,7 @@ def lerp(t, a, b):
 def run():
     flip = True
     for i in range(0, 10_000_000):
-        if i % 1000 == 0:
-            flip = not flip
-
-        print(flip)
-        if flip:
-            driveMotor.run(1000)
-        else:
-            driveMotor.run(0)
-            driveMotor.hold()
+        t = min((i / 10_000), 10_000)
+        driveMotor.run(t)
 
 run()
