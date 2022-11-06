@@ -21,7 +21,7 @@ steps = 1000
 
 for i in range(100, steps+1):
     t = i * 10
-    driveMotor.run_time(t, 1, then=Stop.COAST, wait=True)
+    driveMotor.run_until_stalled(100, then=Stop.COAST, duty_limit=None)
 
 
 #for i in range(0, steps+1):
