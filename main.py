@@ -4,7 +4,7 @@ from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor, InfraredSensor
 from pybricks.parameters import Port, Stop, Direction, Button, Color
 from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
-import math
+from math import *
 from vector import Vector
 
 brick = EV3Brick()
@@ -28,7 +28,7 @@ def lerp(t, a, b):
     return a + (b - a) * t
 
 def fun(x):
-    return (0-x)*(30-x)*(50-x)*(70-x)*-0.0005 + 100
+    return sin(x) * 100
 
 def run():
     flip = True
