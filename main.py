@@ -31,7 +31,7 @@ def lerp(t, a, b):
 
 def run():
     for i in range(0, 10_000_000):
-        if i is 10_000:
+        if i % 10_000 is 0:
             flip = not flip
 
         if flip:
