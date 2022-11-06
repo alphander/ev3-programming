@@ -7,6 +7,8 @@ from pybricks.robotics import DriveBase
 import math
 from vector import Vector
 
+brick = EV3Brick()
+
 drive = 1/3
 pan = 1/56
 tilt = 1/56
@@ -30,5 +32,7 @@ def run():
         t = (i / float(steps))
         speed = lerp(t, a, b)
         driveMotor.run_until_stalled(speed, then=Stop.COAST, duty_limit=None)
+        brick.speaker.beep()
+
 
 run()
