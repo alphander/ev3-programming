@@ -28,7 +28,7 @@ def lerp(t, a, b):
     return a + (b - a) * t
 
 def fun(x):
-    return min((((0-x)*(30-x)*(50-x)*(70-x))-0.001) + 130, 1000)
+    return min((((0-x)*(30-x)*(50-x)*(70-x))*0.001) + 130, 1000)
 
 def run():
     flip = True
