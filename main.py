@@ -28,6 +28,15 @@ def lerp(t, a, b):
     return a + (b - a) * t
 
 def run():
-    driveMotor.run(1000)
+    flip = True
+    for i in range(0, 10_000_000):
+        if i % 100 == 0:
+            flip = not flip
+
+        print(flip)
+        if flip:
+            driveMotor.run(1000)
+        else:
+            driveMotor.run(0)
 
 run()
