@@ -31,8 +31,6 @@ def run():
     for i in range(0, steps):
         t = (i / float(steps))
         speed = lerp(t, a, b)
-        driveMotor.run_until_stalled(speed, then=Stop.COAST, duty_limit=None)
-        brick.speaker.beep()
-
+        driveMotor.run(speed)
 
 run()
