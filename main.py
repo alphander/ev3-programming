@@ -12,7 +12,7 @@ brick = EV3Brick()
 drive = 1/3
 pan = 1/56
 tilt = 1/56
-driveMotor = Motor(Port.B)
+driveMotor = Motor(Port.D)
 #panMotor = Motor(Port.B)
 #tiltMotor = Motor(Port.C)
 
@@ -23,17 +23,12 @@ steps = 1000
 
 a = 10
 b = 1000
+#800 max speed
 
-def lerp(t, a, b):
-    return a + (b - a) * t
+brick.screen.print("test")
 
-def fun(x):
-    return sin(x) * 100
+def main():
+    driveMotor.run(800)
 
-def run():
-    flip = True
-    for i in range(0, 10_000_000):
-        t = fun(i/10)
-        driveMotor.run(t)
-
-run()
+if __name__=="__main__":
+    main()
