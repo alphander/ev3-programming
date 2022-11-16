@@ -26,8 +26,11 @@ b = 1000
 #800 max speed
 
 def main():
-    for i in range(100000000):
-        brick.screen.print("test")
+    for i in range(10000000000):
+        driveMotor.run(10000)
+        speed = driveMotor.speed()
+        speedStr = str(speed)
+        brick.screen.print(speedStr)
 
 if __name__=="__main__":
     main()
