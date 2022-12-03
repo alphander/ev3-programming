@@ -53,6 +53,8 @@ def run_motor(motor):
 
     angleError = realAngle - currentAngle
 
+    motor.run(realSpeed + angleError * dt)
+
     #angleError is the difference between the expected angle and the true angle in real life
 
     
@@ -60,6 +62,8 @@ def run_motor(motor):
 def main():
     while True:
         run_motor(driveMotor)
+        run_motor(panMotor)
+        run_motor(tiltMotor)
 
 if __name__=="__main__":
     main()
