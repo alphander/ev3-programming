@@ -20,9 +20,7 @@ tiltMotor = Motor(Port.C)
 positionA = Vector(0, 0, 0)
 positionB = Vector(12.4, 1.4, 3.3)
 
-
-
-#Note for ezra: This is stuff that you don't need to worry about!
+#Note for Ezra: This is stuff that you don't need to worry about!
 startTime = time.time()
 
 oldTime = 0 
@@ -32,11 +30,11 @@ oldAngle = 0
 currentAngle = 0
 #800 max speed
 
-def sample_angle(timeSinceStart):
-    pass
+def sample_angle(timeSinceStart) -> int:
+    return 0
 
 
-def run_motor(motor):
+def run_motor(motor) -> None:
     global timeSinceStart, oldTime, currentTime
     global oldAngle, currentAngle
 
